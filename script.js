@@ -1,20 +1,38 @@
-var input=document.querySelector("#pass-input");
-var submit=document.querySelector("#btn-submit");
-var outputMsg=document.querySelector("#output");
+inputUser=document.querySelector("#input");
+btnSubmit=document.querySelector("#btncheck");
+outputMsg=document.querySelector("#output");
 
-function checkPassword(){
- if(input.value!="")  { 
-if(input.value.length < 10){
-    alert("Enter more than 10 characters");
-}
-else{
-    outputMsg.innerText="Your password is saved";
-}
- }
- else{
-    alert("Please enter password");
- }
+
+function isMyBirthday()
+{
+    var bdayStr=inputUser.value;
+    if(bdayStr=='')
+    {
+        outputMsg.innerText="Select a Date";
+    } 
+
+    else{
+    if(bdayStr !== '')
+      {
+      var listOfDate = bdayStr.split('-');
+      var date={day:Number(listOfDate[2]),
+                month:Number(listOfDate[1]),
+                year:Number(listOfDate[0])};
+
+        if(date.day==4 && date.month==6 && date.year==1998)
+      {
+       outputMsg.innerText="Thanks,Correcto! turu friend 🙂";
+        //console.log(outputMsg.innerText="Thanks friend,correcto");
+      }
+      else{
+        outputMsg.innerText="Cheeeee!You dont know my b'day 😅";      
+      }
+      }
+    }
+      
 }
 
-submit.addEventListener("click",checkPassword);
+
+
+btnSubmit.addEventListener("click",isMyBirthday);
 
