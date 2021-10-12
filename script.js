@@ -19,7 +19,7 @@ function isMyBirthday()
                 month:Number(listOfDate[1]),
                 year:Number(listOfDate[0])};
 
-        if(date.day==4 && date.month==6 && date.year==1998)
+        if(date.day==2 && date.month==5 && date.year==1998)
       {
        outputMsg.innerText="Thanks,Correcto! turu friend 🙂";
         //console.log(outputMsg.innerText="Thanks friend,correcto");
